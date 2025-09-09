@@ -1,0 +1,132 @@
+/* --- Grille projets --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* Project Card */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay au hover */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.overlay .view-project {
+  padding: 8px 15px;
+  background: #00D1C7;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.overlay .view-project:hover {
+  background: #00D1C7;
+}
+
+/* Boutons filtres */
+.project-filters {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.project-filters button {
+  background: #00D1C7;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin: 0 5px 10px 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project-filters button:hover,
+.project-filters button.active {
+  background: #00D1C7;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.lightbox-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.lightbox-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
